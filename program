@@ -1,0 +1,15 @@
+#include<stdio.h>
+int main(void){
+    FILE *fp ;
+    if((fp=fopen("3-1.txt","r"))!=NULL)
+    {
+        int buf[3];
+        char str[16];
+        while( fscanf(fp,"%[^,],%d,%d,%d",str,&buf[0],&buf[1],&buf[2]) != EOF )
+        {
+            printf("%s,%d,%d,%d",str,buf[0],buf[1],buf[2]);
+        }
+        fclose(fp);
+    }
+    return 0;
+}
